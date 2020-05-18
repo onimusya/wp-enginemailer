@@ -1,0 +1,60 @@
+{% extends "layouts/settings_base.tpl.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Engine Mailer Network Settings</h4>  
+            <br>       
+        </div>        
+    </div>
+
+{% if error_message != '' %}
+    <div class="row">
+        <div class="col-md-12">
+            {{ error_message }}
+        </div>
+    </div>
+
+{% else %}
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" id="form_network_settings_general" action="" >
+                {{ nonce|raw }}
+
+                <input type="hidden" name="action" value="general">
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="em_user_id" class="col-md-2 control-label">Engine Mailer User Id</label>
+                        <div class="col-md-4">
+                            <input id="em_user_id" class="form-control" name="em_user_id" type="text" value="{{ em_option_em_user_id }}" >  
+                            <br>  
+                            <br>                    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="form-group">
+                        <label for="em_user_key" class="col-md-2 control-label">Engine Mailer User Key</label>
+                        <div class="col-md-4">
+                            <input id="em_user_key" class="form-control" name="em_user_key" type="text" value="{{ em_option_em_user_key }}" >  
+                            <br>  
+                            <br>                    
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-info">Update</button>
+                    </div>
+                </div>                        
+            
+            </form>
+        </div>
+    </div>
+
+{% endif %}
+
+{% endblock %}

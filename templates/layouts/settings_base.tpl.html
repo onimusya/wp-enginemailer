@@ -1,0 +1,28 @@
+<div class="hm-bootstrap" id="em_settings_container">
+    
+    <div class="clearfix">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3> {{ __('Engine Mailer Settings', em_text_domain) }}</h2>            
+            </div>        
+        </div>
+
+        <!-- Tab Options -->
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" {% if current_tab == '' %}class="active"{% endif %}><a href="{{ tab_general_url }}"><strong>General</strong></a></li>
+                    <li role="presentation" {% if current_tab == 'testmail' %}class="active"{% endif %}><a href="{{ tab_testmail_url }}">Test Mail</a></li>
+
+                </ul>
+            </div>            
+        </div>
+        
+        {% block content %}{% endblock %}
+    </div>
+
+    </div>
+</div>

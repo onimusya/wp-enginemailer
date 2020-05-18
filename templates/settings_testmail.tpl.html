@@ -1,0 +1,22 @@
+{% extends "layouts/settings_base.tpl.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Test Send Email</h4>  
+            <br>       
+        </div>        
+    </div>
+
+{% if error_message != '' %}
+    <div class="row">
+        <div class="col-md-12">
+            {{ error_message }}
+        </div>
+    </div>
+{% else %}
+    
+
+{% endif %}
+
+{% endblock %}
