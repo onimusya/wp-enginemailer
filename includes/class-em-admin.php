@@ -43,7 +43,7 @@ class EmAdmin {
             'manage_options', 
             EM_MENU_SLUG, 
             array($this, 'mainMenuPage'), 
-            EM_URL . 'assets/img/123funnel-menu-icon.png', 
+            'dashicons-email', 
             '23.56'
         );
     }
