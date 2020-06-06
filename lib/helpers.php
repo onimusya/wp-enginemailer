@@ -4,7 +4,7 @@ global $em_logger;
 global $em_twig;
 
 if ( !$em_logger ) {
-    $em_logger = new \Monolog\Logger('FL');
+    $em_logger = new \Monolog\Logger('EM');
     $em_logger->pushHandler(new \Monolog\Handler\RotatingFileHandler(EM_PATH . 'logs/enginemailer.log', 10, \Monolog\Logger::DEBUG));
 }
 
@@ -31,8 +31,8 @@ function get_twig() {
     global $em_twig;
 
     if (!$em_twig) {
-        $params['paths'] = FL_PATH . 'templates';
-        //$params['cache'] = FL_PATH . 'cache';
+        $params['paths'] = EM_PATH . 'templates';
+        //$params['cache'] = EM_PATH . 'cache';
         $params['cache'] = false;
 
         $em_twig = new Twig($params);
