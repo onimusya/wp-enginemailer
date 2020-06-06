@@ -52,7 +52,7 @@ class EmAdminScripts {
 
             wp_enqueue_script('em_admin_js', EM_URL .'assets/js/em_admin.js', array('jquery'), time(), false);
 
-            $nonce = wp_create_nonce(FL_NONCE);
+            $nonce = wp_create_nonce(EM_NONCE);
             wp_localize_script( 'em_admin_js', 'em_ajax_obj', array(
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                 'nonce'    => $nonce,

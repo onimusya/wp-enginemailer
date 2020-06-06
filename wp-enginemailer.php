@@ -37,6 +37,8 @@ if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
 }
 
 require_once 'includes/class-em-admin-scripts.php';
+require_once 'includes/class-em-network-admin.php';
+require_once 'includes/class-em-admin.php';
 
 class EngineMailer {
     private static $_instance = null;
@@ -72,6 +74,8 @@ class EngineMailer {
         }
 
         $this->admin_scripts = new EmAdminScripts();
+        $this->network_admin = new EmNetworkAdmin();
+        $this->admin = new EmAdmin();
         
 	}
     
