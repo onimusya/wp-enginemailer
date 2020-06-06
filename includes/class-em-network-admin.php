@@ -25,9 +25,9 @@ class EmNetworkAdmin {
             __(EM_PAGE_TITLE, EM_TEXT_DOMAIN), 
             __(EM_MENU_TITLE, EM_TEXT_DOMAIN), 
             'manage_network_options', 
-            FL_MENU_SLUG, 
+            EM_MENU_SLUG, 
             array($this, 'networkMainMenuPage'), 
-            FL_URL . 'assets/img/123funnel-menu-icon.png', 
+            EM_URL . 'assets/img/123funnel-menu-icon.png', 
             '23.56'
         );
     }
@@ -97,7 +97,7 @@ class EmNetworkAdmin {
             default:
 
                 $params[EM_OPTION_EM_USER_ID] = get_site_option(EM_OPTION_EM_USER_ID);
-                $params[EM_OPTION_EM_USER_KEY] = get_site_option(FL_OPTION_EM_USER_KEY);
+                $params[EM_OPTION_EM_USER_KEY] = get_site_option(EM_OPTION_EM_USER_KEY);
 
                 echo $this->twig->render('network_settings.tpl.html', $params);
                 break;
@@ -109,7 +109,7 @@ class EmNetworkAdmin {
         log_message('debug', '[enginemailer][EmNetworkAdmin->addActionLinks()] start');
 
         $mylinks = array(
-            '<a href="' . self_admin_url() . '/admin.php?page=' . FL_MENU_SLUG . '">Settings</a>',
+            '<a href="' . self_admin_url() . '/admin.php?page=' . EM_MENU_SLUG . '">Settings</a>',
         );
 
         return array_merge( $links, $mylinks );

@@ -23,7 +23,7 @@ class EmAdmin {
 
         $blog_id = get_current_blog_id();
 
-        if ($fl_plugin_network_activate) {
+        if ($em_plugin_network_activate) {
             $this->em_user_id = get_site_option(EM_OPTION_EM_USER_ID);
             $this->em_user_key = get_site_option(EM_OPTION_EM_USER_KEY);
             
@@ -43,7 +43,7 @@ class EmAdmin {
             'manage_options', 
             EM_MENU_SLUG, 
             array($this, 'mainMenuPage'), 
-            FL_URL . 'assets/img/123funnel-menu-icon.png', 
+            EM_URL . 'assets/img/123funnel-menu-icon.png', 
             '23.56'
         );
     }
@@ -63,8 +63,8 @@ class EmAdmin {
             'error_message' => '',
             'plugin_network_activate' => $em_plugin_network_activate,
             'current_tab' => $tab,
-            'tab_general_url' => menu_page_url(FL_MENU_SLUG, false),
-            'tab_testmail_url' => menu_page_url(FL_MENU_SLUG, false) . '&t=testmail'
+            'tab_general_url' => menu_page_url(EM_MENU_SLUG, false),
+            'tab_testmail_url' => menu_page_url(EM_MENU_SLUG, false) . '&t=testmail'
 
         ];
 
