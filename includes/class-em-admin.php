@@ -51,6 +51,8 @@ class EmAdmin {
     public function mainMenuPage() {
         global $wpdb, $current_user, $em_plugin_network_activate;
 
+        $em_dest_email = '';
+
         log_message('debug', '[enginemailer][EmAdmin->mainMenuPage()] admin url:' . self_admin_url());
         log_message('debug', '[enginemailer][EmAdmin->mainMenuPage()] menu page url:' . menu_page_url(EM_MENU_SLUG, false));        
 
@@ -100,6 +102,14 @@ class EmAdmin {
             } else if ($action == 'testmail') {
                 // Send test email
 
+                $em_dest_email = '';
+                if (isset($_POST['em_dest_email'])) {
+                    $em_user_id = sanitize_text_field($_POST['em_dest_email']);
+                }
+
+                log_message('debug', "[enginemailer][EmAdmin->mainMenuPage()] Send test email to $em_dest_email.");
+
+
             } else {
 
             }
@@ -113,6 +123,8 @@ class EmAdmin {
 
         switch ($tab) {
             case 'testmail':
+                $params['em_option_em_dest_email'] = $em_dest_email;
+
                 echo $this->twig->render('settings_testmail.tpl.html', $params);
                 break;
 

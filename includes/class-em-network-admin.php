@@ -91,7 +91,7 @@ class EmNetworkAdmin {
         switch ($tab) {
             case 'testemail':
 
-                echo $this->twig->render('network_settings_other.tpl.html', $params);
+                echo $this->twig->render('network_settings_testmail.tpl.html', $params);
                 break;
 
             default:

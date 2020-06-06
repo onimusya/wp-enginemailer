@@ -15,7 +15,35 @@
         </div>
     </div>
 {% else %}
-    
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" id="form_settings_testmail" action="" >
+            {{ nonce|raw }}
+
+            <input type="hidden" name="action" value="testmail">
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="em_dest_email" class="col-md-2 control-label">
+                        Recipient Email
+                    </label>
+                    <div class="col-md-4">
+                        <input id="em_dest_email" class="form-control" name="em_dest_email" type="text" value="{{ em_option_em_dest_email }}">  
+                        <br>  
+                        <br>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-info">Send Email</button>
+                </div>
+            </div>             
+
+        </form>
+    </div>
+</div>
 
 {% endif %}
 
